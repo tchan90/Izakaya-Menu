@@ -1,5 +1,5 @@
-export default function SubPage() {
-    return (
-    <h1>SubPage home</h1>
-    )
-  }
+const SubPage = () => {
+  return <h1>SubPage home</h1>;
+};
+
+export default SubPage;
