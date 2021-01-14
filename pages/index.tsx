@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 
 const Home = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Starter Template</title>
       </Head>
-      <h1>NextJS Starter Template - Home</h1>
+      <h1 className="font-bold">NextJS Starter Template - Home</h1>
       {/* Content */}
     </div>
   );
