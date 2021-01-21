@@ -1,13 +1,13 @@
 import Head from 'next/head';
+import MainPanal from '../components/MainPanal';
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gray-400 h-screen">
       <Head>
-        <title>Starter Template</title>
+        <title>Poke-dex</title>
       </Head>
-      <h1 className="font-bold">NextJS Starter Template - Home</h1>
-      {/* Content */}
+      <MainPanal />
     </div>
   );
 };
