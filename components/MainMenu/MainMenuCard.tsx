@@ -1,11 +1,15 @@
 import { useState } from 'react';
+import { atom } from 'recoil';
+import { useRecoilState } from 'recoil';
+import { openModal as modal } from '../../atoms/atoms';
+
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Item from '../../modals/Item';
 
 const MainMenuCard = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useRecoilState(modal);
   const handleToggleModal = () => {
     setOpenModal(!openModal);
   };
