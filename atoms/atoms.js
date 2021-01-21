@@ -1,6 +1,16 @@
-import { atom } from 'recoil';
+import { atom, selector } from 'recoil';
 
-export const openModal = atom({
-  key: 'openModal',
+//Modal
+export const openModalState = atom({
+  key: 'openModalState',
   default: false,
+});
+
+export const toggleOpenModal = selector({
+  key: 'openModalToggle',
+  set: ({ get, set }) => {
+    const currentValue = get(openModalState);
+
+    set(openModalState, !currentValue);
+  },
 });
