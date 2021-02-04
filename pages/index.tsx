@@ -1,14 +1,32 @@
+import Link from 'next/link';
 import Head from 'next/head';
-import MainPanal from '../components/MainPanal';
+import { GetStaticProps } from 'next';
 
-const Home = () => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const res = await fetch('http://localhost:3000/api/getMenu');
+  const data = await res.json();
+
+  return {
+    props: {
+      menu: data,
+    },
+  };
+};
+
+const Home = ({ menu }) => {
+  const firstItem = Object.keys(menu.data)[0];
   return (
     <div className="bg-gray-400 h-screen">
       <Head>
-        <title>Poke-dex</title>
+        <title>Izakaya Inn</title>
       </Head>
-      <MainPanal />
+      <div className="flex h-screen">
+        <Link href={`http://localhost:3000/menu/${firstItem}`}>
+          <div className="m-auto cursor-pointer">Click to go to Menu</div>
+        </Link>
+      </div>
     </div>
   );
 };
+
 export default Home;

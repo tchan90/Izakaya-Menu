@@ -3,7 +3,7 @@ import SideMenu from './SideMenu/SideMenu';
 import MainMenu from './MainMenu/MainMenu';
 import styles from './MainPanal.module.css';
 
-const MainPanal = () => {
+const MainPanal = ({ items, categories }) => {
   return (
     <Layout>
       <div className="flex flex-row">
@@ -11,9 +11,9 @@ const MainPanal = () => {
           <div className="w-full bg-gray-800 flex flex-row justify-end">
             <div className={styles.triangle} />
           </div>
-          <SideMenu />
+          <SideMenu categories={categories} />
         </div>
-        <MainMenu />
+        <MainMenu items={items} />
       </div>
     </Layout>
   );

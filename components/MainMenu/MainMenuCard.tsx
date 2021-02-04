@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Item from '../../modals/Item';
 
-const MainMenuCard = () => {
+const MainMenuCard = ({ food }) => {
   const [openModal, setOpenModal] = useState(false);
   const handleToggleModal = () => {
     setOpenModal(!openModal);
@@ -52,8 +52,8 @@ const MainMenuCard = () => {
           </div>
         </div>
         <div className="flex flex-row h-auto justify-between mt-5 px-2">
-          <p>#1 Baulbasaur</p>
-          <p className="text-gray-500">$15.00</p>
+          <p className="capitalize">{food.name}</p>
+          <p className="text-gray-500">{food.price}</p>
         </div>
       </div>
       <Item showModal={openModal} toggleModal={handleToggleModal} />
