@@ -15,7 +15,6 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
       );
     })
     .then((data) => {
-      console.log('data', data);
       return {
         props: {
           items: data[0],
