@@ -5,8 +5,8 @@ const SideMenu = ({ categories }) => {
   return (
     <div className="w-full flex-1 p-3" style={{ height: '88vh' }}>
       <div className="h-full bg-white rounded-md p-7">
-        {cat.map((c) => {
-          return <SideMenuCard title={c} />;
+        {cat.map((c, k) => {
+          return <SideMenuCard key={k} title={c} />;
         })}
       </div>
     </div>

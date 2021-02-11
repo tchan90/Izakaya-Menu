@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { addPillState, toggleAddPill } from '../../atoms/atoms';
+import { cartState } from '../../atoms/atoms';
 
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,8 +13,10 @@ const MainMenuCard = ({ food }) => {
     setOpenModal(!openModal);
   };
 
-  const addPill = useRecoilValue(addPillState);
-  const handleTogglePill = useSetRecoilState(toggleAddPill);
+  const checkCart = useRecoilValue(cartState);
+  const handleAddtoCart = useSetRecoilState(cartState);
+
+  const isOrdered = checkCart.some((i) => i.id === food.id);
 
   return (
     <>
@@ -28,14 +30,19 @@ const MainMenuCard = ({ food }) => {
             >
               <FontAwesomeIcon icon={faSearch} color="white" size="1x" />
             </button>
-            {addPill ? (
+            {isOrdered ? (
               <div className="h-2/4 bg-green-500 rounded-full py-1 px-2 m-1 text-sm font-medium inline-block">
                 <p>Added!</p>
               </div>
             ) : (
               <button
                 className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center m-2 cursor-pointer"
-                onClick={handleTogglePill}
+                onClick={() =>
+                  handleAddtoCart((items) => [
+                    ...items,
+                    { id: food.id, name: food.name },
+                  ])
+                }
                 role="button"
               >
                 <FontAwesomeIcon icon={faPlus} color="white" size="1x" />
@@ -56,7 +63,7 @@ const MainMenuCard = ({ food }) => {
           <p className="text-gray-500">{food.price}</p>
         </div>
       </div>
-      <Item showModal={openModal} toggleModal={handleToggleModal} />
+      <Item showModal={openModal} toggleModal={handleToggleModal} food={food} />
     </>
   );
 };

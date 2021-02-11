@@ -1,4 +1,5 @@
-import { atom, selector } from 'recoil';
+import { get } from 'http';
+import { atom, selector, selectorFamily } from 'recoil';
 
 //Modal
 // export const openModalState = atom({
@@ -15,17 +16,23 @@ import { atom, selector } from 'recoil';
 //   },
 // });
 
-// Add Pill
-export const addPillState = atom({
-  key: 'addPillState',
-  default: false,
+// Cart State
+export const cartState = atom({
+  key: 'cartState',
+  default: [],
 });
 
-export const toggleAddPill = selector({
-  key: 'toggleAddPill',
-  set: ({ get, set }) => {
-    const currentValue = get(addPillState);
-
-    set(addPillState, !currentValue);
-  },
+// Kitchen State
+export const kitchenState = atom({
+  key: 'kitchenState',
+  default: [],
 });
+
+// export const removeFromCart = selectorFamily({
+//   key: 'removeFromCart',
+//   set: (id) => ({ get, set }) => {
+//     const currentCart = get(cartState);
+//     const filteredCart = currentCart.filter((cart) => cart.id !== id);
+//     set(cartState, filteredCart);
+//   },
+// });

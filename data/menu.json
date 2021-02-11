@@ -3,28 +3,28 @@
     {
       "id": 1,
       "name": "Chicken Ramen",
-      "price": "$22",
+      "price": "$22.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/qom5MPOER-I"
     },
     {
       "id": 2,
       "name": "Pork Ramen",
-      "price": "$22",
+      "price": "$22.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 3,
       "name": "Deluxe Beef Ramen",
-      "price": "$26",
+      "price": "$26.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 4,
       "name": "Miso Ramen",
-      "price": "$20",
+      "price": "$20.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     }
@@ -33,28 +33,28 @@
     {
       "id": 5,
       "name": "Chicken Katsu",
-      "price": "$20",
+      "price": "$20.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 6,
       "name": "Beef",
-      "price": "$20",
+      "price": "$20.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 7,
       "name": "Tofu",
-      "price": "$20",
+      "price": "$20.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 8,
       "name": "Eel",
-      "price": "$20",
+      "price": "$20.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     }
@@ -63,21 +63,21 @@
     {
       "id": 9,
       "name": "Chicken Don",
-      "price": "$18",
+      "price": "$18.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 10,
       "name": "Sliced Beef Don",
-      "price": "$18",
+      "price": "$18.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 11,
       "name": "Vegetable Don",
-      "price": "$18",
+      "price": "$18.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     }
@@ -86,35 +86,35 @@
     {
       "id": 12,
       "name": "Salmon Roll",
-      "price": "$16",
+      "price": "$16.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 13,
       "name": "Unagi Roll",
-      "price": "$18",
+      "price": "$18.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 14,
       "name": "Californian Roll",
-      "price": "$15",
+      "price": "$15.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 15,
       "name": "Veg Nigiri",
-      "price": "$16",
+      "price": "$16.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 16,
       "name": "Salmon Nigiri",
-      "price": "$16",
+      "price": "$16.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     }
@@ -123,35 +123,35 @@
     {
       "id": 17,
       "name": "Chicken",
-      "price": "$13",
+      "price": "$13.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 18,
       "name": "Beef",
-      "price": "$13",
+      "price": "$13.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 19,
       "name": "Vegetable",
-      "price": "$13",
+      "price": "$13.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 20,
       "name": "Pork",
-      "price": "$13",
+      "price": "$13.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 21,
       "name": "Mackeral",
-      "price": "$13",
+      "price": "$13.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     }
@@ -160,7 +160,7 @@
     {
       "id": 22,
       "name": "Green Tea",
-      "price": "$4",
+      "price": "$4.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
@@ -174,14 +174,21 @@
     {
       "id": 24,
       "name": "HoneyDew Soda",
-      "price": "$5",
+      "price": "$5.00",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     },
     {
       "id": 25,
       "name": "Aloe Vera",
-      "price": "$4",
+      "price": "$4.00",
+      "description": "Lorem Ipsum",
+      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+    },
+    {
+      "id": 26,
+      "name": "Calpis",
+      "price": "$4.80",
       "description": "Lorem Ipsum",
       "image": "https://unsplash.com/photos/2t28IxSTqF4"
     }
