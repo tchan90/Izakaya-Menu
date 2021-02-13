@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import MainPanal from '../../components/MainPanal';
 
@@ -40,15 +40,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const Menu = ({ items, categories }) => {
-  const router = useRouter();
-  // if fallback set to true, wait for server to stop loading
-  if (router.isFallback) {
-    return <h1>Loading...</h1>;
-  }
   return (
-    <div className="bg-gray-400 h-screen">
-      <MainPanal items={items} categories={categories} />
-    </div>
+    <>
+      <Head>
+        <title>Izakaya Inn - Menu</title>
+      </Head>
+      <div className="bg-gray-400 h-screen">
+        <MainPanal items={items} categories={categories} />
+      </div>
+    </>
   );
 };
 export default Menu;

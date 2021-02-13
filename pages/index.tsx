@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
 import { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async (context) => {

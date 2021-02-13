@@ -40,7 +40,7 @@ const MainMenuCard = ({ food }) => {
                 onClick={() =>
                   handleAddtoCart((items) => [
                     ...items,
-                    { id: food.id, name: food.name },
+                    { id: food.id, name: food.name, count: 1 },
                   ])
                 }
                 role="button"
