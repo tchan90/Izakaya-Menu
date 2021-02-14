@@ -18,6 +18,9 @@ const MainMenuCard = ({ food }) => {
 
   const isOrdered = checkCart.some((i) => i.id === food.id);
 
+  const price = food.price;
+  const priceDisplay = price.toFixed(2);
+
   return (
     <>
       <div className="w-80 h-80 bg-white m-4 border-2 border-gray-200 rounded-md shadow-md text-xl">
@@ -40,7 +43,12 @@ const MainMenuCard = ({ food }) => {
                 onClick={() =>
                   handleAddtoCart((items) => [
                     ...items,
-                    { id: food.id, name: food.name, count: 1 },
+                    {
+                      id: food.id,
+                      name: food.name,
+                      price: food.price,
+                      count: 1,
+                    },
                   ])
                 }
                 role="button"
@@ -60,7 +68,7 @@ const MainMenuCard = ({ food }) => {
         </div>
         <div className="flex flex-row h-auto justify-between mt-5 px-2">
           <p className="capitalize">{food.name}</p>
-          <p className="text-gray-500">{food.price}</p>
+          <p className="text-gray-500">${priceDisplay}</p>
         </div>
       </div>
       <Item showModal={openModal} toggleModal={handleToggleModal} food={food} />

@@ -3,7 +3,6 @@ import { kitchenState } from '../../atoms/atoms';
 
 const Kitchen = () => {
   const kitchen = useRecoilValue(kitchenState);
-  console.log('kitchen', kitchen);
 
   return (
     <div className="w-10/12 m-auto">

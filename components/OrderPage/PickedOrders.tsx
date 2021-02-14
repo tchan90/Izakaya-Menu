@@ -50,7 +50,12 @@ const PickedOrders = ({ cartItems }) => {
     if (cartItems.count > 0) {
       handleSendToKitchen((items) => [
         ...items,
-        { id: cartItems.id, name: cartItems.name, count: cartItems.count },
+        {
+          id: cartItems.id,
+          name: cartItems.name,
+          price: cartItems.price,
+          count: cartItems.count,
+        },
       ]);
       handleRemovefromCart(cartItems.id);
     }

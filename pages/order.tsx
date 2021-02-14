@@ -8,7 +8,6 @@ import Kitchen from '../components/OrderPage/Kitchen';
 
 const Order = () => {
   const cart = useRecoilValue(cartState);
-  console.log('cart', cart);
 
   const resetCart = useResetRecoilState(cartState);
   const resetKitchen = useResetRecoilState(kitchenState);
