@@ -5,28 +5,32 @@
       "name": "Chicken Ramen",
       "price": 22.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/qom5MPOER-I"
+      "image": "https://images.unsplash.com/photo-1613232683444-de0a4942e932?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800",
+      "vegeterian": false
     },
     {
       "id": 2,
       "name": "Pork Ramen",
       "price": 22.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800",
+      "vegeterian": false
     },
     {
       "id": 3,
       "name": "Deluxe Beef Ramen",
       "price": 26.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://images.unsplash.com/photo-1478749485505-2a903a729c63?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800",
+      "vegeterian": false
     },
     {
       "id": 4,
       "name": "Miso Ramen",
       "price": 20.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800",
+      "vegeterian": true
     }
   ],
   "bento": [
@@ -35,21 +39,24 @@
       "name": "Chicken Katsu",
       "price": 20.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 6,
       "name": "Beef",
       "price": 20.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 7,
       "name": "Tofu",
       "price": 20.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": true
     },
     {
       "id": 8,
@@ -65,21 +72,24 @@
       "name": "Chicken Don",
       "price": 18.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 10,
       "name": "Sliced Beef Don",
       "price": 18.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 11,
       "name": "Vegetable Don",
       "price": 18.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": true
     }
   ],
   "sushi": [
@@ -88,35 +98,40 @@
       "name": "Salmon Roll",
       "price": 16.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 13,
       "name": "Unagi Roll",
       "price": 18.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 14,
       "name": "Californian Roll",
       "price": 15.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 15,
       "name": "Veg Nigiri",
       "price": 16.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": true
     },
     {
       "id": 16,
       "name": "Salmon Nigiri",
       "price": 16.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     }
   ],
   "skewers": [
@@ -125,35 +140,40 @@
       "name": "Chicken",
       "price": 13.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 18,
       "name": "Beef",
       "price": 13.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 19,
       "name": "Vegetable",
       "price": 13.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": true
     },
     {
       "id": 20,
       "name": "Pork",
       "price": 13.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     },
     {
       "id": 21,
       "name": "Mackeral",
       "price": 13.0,
       "description": "Lorem Ipsum",
-      "image": "https://unsplash.com/photos/2t28IxSTqF4"
+      "image": "https://unsplash.com/photos/2t28IxSTqF4",
+      "vegeterian": false
     }
   ],
   "drinks": [

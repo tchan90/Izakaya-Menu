@@ -2,13 +2,9 @@ import { useState } from 'react';
 import ReactModal from './ReactModal';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { kitchenState } from '../atoms/atoms';
-import GoToCounter from './GoToCounter';
 
 const Cheque = (props) => {
-  const [openModal, setOpenModal] = useState(false);
-  const handleToggleModal = () => {
-    setOpenModal(!openModal);
-  };
+  const [readyToPay, setReadyToPay] = useState(false);
   const currentCart = useRecoilValue(kitchenState);
   let pricesArray = [];
   let total = 0;
@@ -24,24 +20,31 @@ const Cheque = (props) => {
   }
 
   const resetKitchen = useResetRecoilState(kitchenState);
-  const readyToPay = () => {
-    handleToggleModal();
+  const goPay = () => {
+    setReadyToPay(true);
     resetKitchen();
   };
 
   return (
     <ReactModal {...props}>
-      {currentCart.map((item) => (
+      {!readyToPay ? (
         <>
-          <p>
-            x{item.count} - {item.name}
-          </p>
-          <p>${item.price * item.count}</p>
+          {currentCart.map((item) => (
+            <>
+              <p>
+                x{item.count} - {item.name}
+              </p>
+              <p>${item.price * item.count}</p>
+            </>
+          ))}
+          <p>Total: ${total}</p>
+          {total > 0 && <button onClick={goPay}>Ready to Pay</button>}
         </>
-      ))}
-      <p>Total: ${total}</p>
-      {total > 0 && <button onClick={readyToPay}>Ready to Pay</button>}
-      <GoToCounter showModal={openModal} toggleModal={handleToggleModal} />
+      ) : (
+        <>
+          <p>Please go to the counter to pay</p>
+        </>
+      )}
     </ReactModal>
   );
 };
