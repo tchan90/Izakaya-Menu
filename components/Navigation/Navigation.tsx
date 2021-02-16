@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,11 +13,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Cheque from '../../modals/Cheque';
 
+import { vegeterianState, toggleVeggiemode } from '../../atoms/atoms';
+
 const Navigation = () => {
   const [openModal, setOpenModal] = useState(false);
   const handleToggleModal = () => {
     setOpenModal(!openModal);
   };
+
+  const isVegModeEnabled = useRecoilValue(vegeterianState);
+  const toggleVegMode = useSetRecoilState(toggleVeggiemode);
 
   const router = useRouter();
   const isOrderPage = router.route === '/order';
@@ -34,7 +40,18 @@ const Navigation = () => {
                   Back to Menu
                 </span>
               )}
-
+              {!isOrderPage && (
+                <div className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    name="toggleSwitch"
+                    id="toggleSwitch"
+                    checked={isVegModeEnabled}
+                    onChange={toggleVegMode}
+                  />{' '}
+                  <label htmlFor="toggleSwitch">Turn on Veggie Mode</label>
+                </div>
+              )}
               <span className="cursor-pointer">
                 <FontAwesomeIcon icon={faUser} color="white" size="1x" /> Get
                 Staff

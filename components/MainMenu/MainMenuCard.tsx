@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { cartState } from '../../atoms/atoms';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +11,10 @@ const MainMenuCard = ({ food }) => {
   const handleToggleModal = () => {
     setOpenModal(!openModal);
   };
+
+  const router = useRouter();
+  const param = router.query.name;
+  const drinkCat = param === 'drinks';
 
   const checkCart = useRecoilValue(cartState);
   const handleAddtoCart = useSetRecoilState(cartState);
@@ -63,7 +68,7 @@ const MainMenuCard = ({ food }) => {
           <div className="flex">
             <p className="capitalize">
               {food.name}
-              {food.vegeterian && (
+              {!drinkCat && food.vegeterian && (
                 <span className="h-5 w-5 mt-1 p-1 flex items-center justify-center bg-green-500 text-white text-sm rounded-full">
                   V
                 </span>

@@ -1,20 +1,4 @@
-import { get } from 'http';
-import { atom, selector, selectorFamily } from 'recoil';
-
-//Modal
-// export const openModalState = atom({
-//   key: 'openModalState',
-//   default: false,
-// });
-
-// export const toggleOpenModal = selector({
-//   key: 'openModalToggle',
-//   set: ({ get, set }) => {
-//     const currentValue = get(openModalState);
-
-//     set(openModalState, !currentValue);
-//   },
-// });
+import { atom, selector } from 'recoil';
 
 // Cart State
 export const cartState = atom({
@@ -28,11 +12,15 @@ export const kitchenState = atom({
   default: [],
 });
 
-// export const removeFromCart = selectorFamily({
-//   key: 'removeFromCart',
-//   set: (id) => ({ get, set }) => {
-//     const currentCart = get(cartState);
-//     const filteredCart = currentCart.filter((cart) => cart.id !== id);
-//     set(cartState, filteredCart);
-//   },
-// });
+// Vegeterian State
+export const vegeterianState = atom({
+  key: 'vegeterianState',
+  default: false,
+});
+export const toggleVeggiemode = selector({
+  key: 'vegieModeToggle',
+  set: ({ get, set }) => {
+    const currentMode = get(vegeterianState);
+    set(vegeterianState, !currentMode);
+  },
+});
