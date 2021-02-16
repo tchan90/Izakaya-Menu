@@ -62,23 +62,17 @@ const PickedOrders = ({ cartItems }) => {
   };
 
   return (
-    <div className="w-10/12 m-auto">
-      <div className="grid gap-1 grid-cols-6 mt-4">
+    <div className="w-2/3 m-auto">
+      <div className="flex mt-4">
         <div className="flex items-center">
           <button onClick={() => handleRemovefromCart(cartItems.id)}>
             <FontAwesomeIcon icon={faTimes} color="black" size="2x" />
           </button>
         </div>
-        <div className="col-span-1 bg-white w-full text-center text-2xl rounded-md">
-          <p className="inline-block align-middle">
-            Order {'#'}
-            {cartItems.id}
-          </p>
+        <div className="w-auto mx-10 flex items-center justify-center bg-white w-full text-center text-2xl rounded-md">
+          <p>{cartItems.name}</p>
         </div>
-        <div className="col-span-2 bg-white w-full text-center text-2xl rounded-md">
-          <p className="inline-block align-middle">{cartItems.name}</p>
-        </div>
-        <div className="col-span-1 flex justify-center bg-white w-full text-center text-2xl rounded-md">
+        <div className="w-auto px-5 mr-10 flex justify-center bg-white text-center text-2xl rounded-md">
           <button
             onClick={() => {
               increment(cartItems.id);
@@ -101,7 +95,7 @@ const PickedOrders = ({ cartItems }) => {
           </button>
         </div>
 
-        <div className="text-right">
+        <div className="flex items-center justify-end">
           <button
             className="auto-rows-min w-min h-auto px-5 py-2 rounded-md bg-gray-600 text-white"
             onClick={() => confirmOrder()}
