@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { cartState } from '../../atoms/atoms';
-
-import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Item from '../../modals/Item';
@@ -58,7 +56,7 @@ const MainMenuCard = ({ food }) => {
         </div>
         <img
           src={food.image}
-          alt="placeholder image"
+          alt={food.name}
           className="object-cover w-full h-3/4"
         />
         <div className="flex flex-row h-auto justify-between mt-5 px-2">
