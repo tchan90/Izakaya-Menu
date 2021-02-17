@@ -1,0 +1,3 @@
+[context.production]
+  command = "next build"
+  environment = { DB_HOST = "wizardly-perlman-60b859.netlify.app" }

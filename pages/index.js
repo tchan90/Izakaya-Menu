@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const getStaticProps = async (context) => {
-  const res = await fetch('http://localhost:3000/api/getMenu');
+  const res = await fetch(`${process.env.DB_HOST}/api/getMenu`);
   const data = await res.json();
 
   return {

@@ -3,8 +3,8 @@ import MainPanal from '../../components/MainPanal';
 
 export const getStaticProps = ({ params }) => {
   return Promise.all([
-    fetch(`http://localhost:3000/api/category/${params.name}`),
-    fetch(`http://localhost:3000/api/getCategories`),
+    fetch(`${process.env.DB_HOST}/api/category/${params.name}`),
+    fetch(`${process.env.DB_HOST}/api/getCategories`),
   ])
     .then((responses) => {
       return Promise.all(
@@ -27,7 +27,7 @@ export const getStaticProps = ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch('http://localhost:3000/api/getMenu');
+  const res = await fetch(`${process.env.DB_HOST}/api/getMenu`);
   const { data } = await res.json();
   const paths = Object.keys(data).map((d) => ({
     params: { name: d },
