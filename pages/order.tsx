@@ -18,9 +18,9 @@ const Order = () => {
       <div className="bg-gray-800 h-screen">
         <Layout />
         <div className="bg-gray-200 h-screen mt-2 p-16 rounded-t-2xl overflow-y-scroll">
-          <h1 className="text-3xl text-left pb-3 border-b-2 border-gray-300">
+          <h2 className="text-3xl text-left pb-3 border-b-2 border-gray-300">
             Picked Orders
-          </h1>
+          </h2>
           {cart.length === 0 && kitchen.length === 0 && (
             <p className="text-center mt-10 text-lg">
               Nothing has been added to your order, pick something from the
@@ -31,9 +31,9 @@ const Order = () => {
             <PickedOrders cartItems={i} key={k} />
           ))}
           <div className="mt-40">
-            <h1 className="text-3xl text-left mb-4 pb-3 border-b-2 border-gray-300">
+            <h2 className="text-3xl text-left mb-4 pb-3 border-b-2 border-gray-300">
               Confirmed Orders
-            </h1>
+            </h2>
             <Kitchen />
           </div>
         </div>

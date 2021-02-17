@@ -74,14 +74,6 @@ const PickedOrders = ({ cartItems }) => {
         </div>
         <div className="w-auto px-5 mr-10 flex justify-center bg-white text-center text-2xl rounded-md">
           <button
-            onClick={() => {
-              increment(cartItems.id);
-            }}
-          >
-            <FontAwesomeIcon icon={faPlusSquare} size="2x" />
-          </button>
-          <p className="m-3 px-4 py-2 border-2">{cartItems.count}</p>
-          <button
             disabled={cartItems.count < 1}
             onClick={() => {
               decrement(cartItems.id);
@@ -92,6 +84,14 @@ const PickedOrders = ({ cartItems }) => {
               color={cartItems.count < 1 ? 'grey' : ''}
               size="2x"
             />
+          </button>
+          <p className="m-3 px-4 py-2 border-2">{cartItems.count}</p>
+          <button
+            onClick={() => {
+              increment(cartItems.id);
+            }}
+          >
+            <FontAwesomeIcon icon={faPlusSquare} size="2x" />
           </button>
         </div>
 

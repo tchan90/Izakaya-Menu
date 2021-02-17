@@ -16,7 +16,7 @@ const Cheque = (props) => {
     });
     const addPrices = (acc, currentValue) => acc + currentValue;
     const getTotal = pricesArray.reduce(addPrices);
-    total = getTotal;
+    total = getTotal.toFixed(2);
   }
 
   const resetKitchen = useResetRecoilState(kitchenState);
@@ -28,22 +28,34 @@ const Cheque = (props) => {
   return (
     <ReactModal {...props}>
       {!readyToPay ? (
-        <>
+        <div className="w-6/12 m-auto">
+          <h1 className="text-3xl text-green-400 bold border-b-4 mb-4 pb-2">
+            Ordered Items
+          </h1>
           {currentCart.map((item) => (
-            <>
+            <div className="w-auto flex justify-between text-lg p-5 border-4 border-gray-200 rounded-xl">
               <p>
                 x{item.count} - {item.name}
               </p>
-              <p>${item.price * item.count}</p>
-            </>
+              <p>${(item.price * item.count).toFixed(2)}</p>
+            </div>
           ))}
-          <p>Total: ${total}</p>
-          {total > 0 && <button onClick={goPay}>Ready to Pay</button>}
-        </>
+          <p className="text-right my-3 text-lg">Total Amount: ${total}</p>
+          {total > 0 && (
+            <div className="flex justify-center mt-10">
+              <button
+                className="p-4 text-red-500 border-double border-4 border-light-red-500 hover:border-red-600	"
+                onClick={goPay}
+              >
+                Ready to Pay
+              </button>
+            </div>
+          )}
+        </div>
       ) : (
-        <>
-          <p>Please go to the counter to pay</p>
-        </>
+        <div className="text-center text-3xl">
+          Please go to the counter to pay
+        </div>
       )}
     </ReactModal>
   );
