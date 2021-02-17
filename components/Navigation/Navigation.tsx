@@ -7,15 +7,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowLeft,
   faMoneyCheckAlt,
-  faUtensils,
   faUser,
   faShoppingCart,
+  faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import Cheque from '../../modals/Cheque';
 
 import { vegeterianState, toggleVeggiemode } from '../../atoms/atoms';
 
 const Navigation = () => {
+  const [getStaff, setGetStaff] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const handleToggleModal = () => {
     setOpenModal(!openModal);
@@ -27,15 +28,34 @@ const Navigation = () => {
   const router = useRouter();
   const isOrderPage = router.route === '/order';
 
+  const toggleGetStaff = () => {
+    setGetStaff(true);
+    setTimeout(() => {
+      setGetStaff(false);
+    }, 3000);
+  };
+
+  <div className="py-1 px-3 text-white border-2 border-white border-dashed">
+    <FontAwesomeIcon icon={faUser} color="white" size="1x" /> A staff member
+    will be with you shortly!
+  </div>;
+
   return (
     <>
       <nav className="bg-gray-800">
-        <div className="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-2 sm:px-6 lg:px-4">
           <div className="relative flex items-center justify-between h-16 py-2">
-            <FontAwesomeIcon icon={faUtensils} color="white" size="3x" />
+            <Link href="/">
+              <span className="text-2xl text-white border-2 border-white py-1 px-3 cursor-pointer hover:bg-gray-600 hover:bg-opacity-70">
+                Izakaya Inn
+              </span>
+            </Link>
             <div className="flex space-x-4 text-white">
               {isOrderPage && (
-                <span className="cursor-pointer" onClick={() => router.back()}>
+                <span
+                  className="cursor-pointer hover:text-gray-300 "
+                  onClick={() => router.back()}
+                >
                   <FontAwesomeIcon icon={faArrowLeft} color="white" size="1x" />{' '}
                   Back to Menu
                 </span>
@@ -49,12 +69,26 @@ const Navigation = () => {
                     checked={isVegModeEnabled}
                     onChange={toggleVegMode}
                   />{' '}
-                  <label htmlFor="toggleSwitch">Turn on Veggie Mode</label>
+                  <label
+                    htmlFor="toggleSwitch"
+                    className="cursor-pointer hover:text-gray-300 "
+                  >
+                    Turn on Veggie Mode
+                  </label>
                 </div>
               )}
-              <span className="cursor-pointer">
-                <FontAwesomeIcon icon={faUser} color="white" size="1x" /> Get
-                Staff
+              <span className="cursor-pointer hover:text-gray-300 relative">
+                <FontAwesomeIcon icon={faUser} color="white" size="1x" />{' '}
+                <button onClick={toggleGetStaff}> Get Staff</button>
+                {getStaff && (
+                  <span className="absolute bottom-3">
+                    <FontAwesomeIcon
+                      icon={faExclamationCircle}
+                      color="red"
+                      size="sm"
+                    />
+                  </span>
+                )}
               </span>
               <span>
                 <FontAwesomeIcon
@@ -64,13 +98,17 @@ const Navigation = () => {
                 />{' '}
                 {isOrderPage ? (
                   <button
-                    className="cursor-pointer"
+                    className="cursor-pointer hover:text-gray-300 "
                     onClick={handleToggleModal}
                   >
                     Get Cheque
                   </button>
                 ) : (
-                  <Link href="http://localhost:3000/order">Order Page</Link>
+                  <Link href="/order">
+                    <span className="cursor-pointer hover:text-gray-300 ">
+                      Order Page
+                    </span>
+                  </Link>
                 )}
               </span>
             </div>

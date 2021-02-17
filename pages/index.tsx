@@ -29,7 +29,7 @@ const Home = ({ menu }) => {
           layout="fill"
           objectFit="fill"
         />
-        <Link href={`http://localhost:3000/menu/${firstItem}`}>
+        <Link href={`/menu/${firstItem}`}>
           <div className="text-7xl text-white font-serif border-double border-8 border-light-blue-500 m-auto px-9 py-5 cursor-pointer z-20 hover:bg-gray-600 hover:bg-opacity-70">
             To Menu
           </div>
