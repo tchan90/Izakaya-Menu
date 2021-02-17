@@ -5,7 +5,7 @@ const Kitchen = () => {
   const kitchen = useRecoilValue(kitchenState);
 
   return (
-    <div className="w-2/3 m-auto">
+    <div className="m-auto md:w-11/12 lg:w-2/3">
       {kitchen.map((k) => (
         <div className="flex mb-5">
           <div className="bg-blue-700 w-48 mr-2 py-4 text-center text-2xl rounded-md">

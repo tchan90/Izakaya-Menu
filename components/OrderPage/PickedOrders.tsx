@@ -62,7 +62,7 @@ const PickedOrders = ({ cartItems }) => {
   };
 
   return (
-    <div className="w-2/3 m-auto">
+    <div className="m-auto md:w-full lg:w-2/3">
       <div className="flex mt-4">
         <div className="flex items-center">
           <button onClick={() => handleRemovefromCart(cartItems.id)}>

@@ -10,7 +10,7 @@ const Item = (props) => {
         <img
           src={foodItem.image}
           alt={foodItem.name}
-          className="w-4/5 h-full"
+          className="w-4/5 h-full md:w-2/4"
         />
         <div className="ml-5">
           <div className="flex">
