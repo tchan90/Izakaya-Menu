@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import { GetStaticProps, GetStaticPaths } from 'next';
 import MainPanal from '../../components/MainPanal';
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
+export const getStaticProps = ({ params }) => {
   return Promise.all([
     fetch(`http://localhost:3000/api/category/${params.name}`),
     fetch(`http://localhost:3000/api/getCategories`),
@@ -27,7 +26,7 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
     });
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const res = await fetch('http://localhost:3000/api/getMenu');
   const { data } = await res.json();
   const paths = Object.keys(data).map((d) => ({

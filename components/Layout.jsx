@@ -1,7 +1,6 @@
-import { FunctionComponent } from 'react';
 import Navigation from './Navigation/Navigation';
 
-const Layout: FunctionComponent = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div>
       <Navigation />

@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { GetStaticProps } from 'next';
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps = async (context) => {
   const res = await fetch('http://localhost:3000/api/getMenu');
   const data = await res.json();
 
