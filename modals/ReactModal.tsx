@@ -1,12 +1,6 @@
-import { FunctionComponent } from 'react';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-
-type ModalProps = {
-  showModal: boolean;
-  toggleModal: Function;
-};
 
 const customStyles = {
   content: {
@@ -22,11 +16,7 @@ const customStyles = {
   },
 };
 
-const ReactModal: FunctionComponent<ModalProps> = ({
-  showModal,
-  toggleModal,
-  children,
-}) => {
+const ReactModal = ({ showModal, toggleModal, children }) => {
   const handleCloseModal = (e) => {
     e.preventDefault();
     toggleModal();
