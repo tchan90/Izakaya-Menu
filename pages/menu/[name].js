@@ -1,34 +1,27 @@
 import Head from 'next/head';
 import MainPanal from '../../components/MainPanal';
 
+import { getCategories, getItems, getMenu } from '../../handlers/MenuService';
+
+// Get categories for side menu
+// Get menu items as per category
 export const getStaticProps = ({ params }) => {
-  return Promise.all([
-    fetch(`${process.env.DB_HOST}/api/category/${params.name}`),
-    fetch(`${process.env.DB_HOST}/api/getCategories`),
-  ])
-    .then((responses) => {
-      return Promise.all(
-        responses.map((response) => {
-          return response.json();
-        })
-      );
-    })
-    .then((data) => {
-      return {
-        props: {
-          items: data[0],
-          categories: data[1],
-        },
-      };
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  const categoryType = params.name;
+
+  const categories = getCategories();
+  const items = getItems(categoryType);
+
+  return {
+    props: {
+      items,
+      categories,
+    },
+  };
 };
 
+// Get paths according to the category names
 export const getStaticPaths = async () => {
-  const res = await fetch(`${process.env.DB_HOST}/api/getMenu`);
-  const { data } = await res.json();
+  const data = getMenu();
   const paths = Object.keys(data).map((d) => ({
     params: { name: d },
   }));
@@ -38,16 +31,15 @@ export const getStaticPaths = async () => {
   };
 };
 
-const Menu = ({ items, categories }) => {
-  return (
-    <>
-      <Head>
-        <title>Izakaya Inn - Menu</title>
-      </Head>
-      <div className="bg-gray-400 h-screen">
-        <MainPanal items={items} categories={categories} />
-      </div>
-    </>
-  );
-};
+const Menu = ({ items, categories }) => (
+  <>
+    <Head>
+      <title>Izakaya Inn - Menu</title>
+    </Head>
+    <div className="bg-gray-400 h-screen">
+      <MainPanal items={items} categories={categories} />
+    </div>
+  </>
+);
+
 export default Menu;

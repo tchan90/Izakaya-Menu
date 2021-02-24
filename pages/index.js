@@ -2,9 +2,10 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { getMenu } from '../handlers/MenuService';
+
 export const getStaticProps = async (context) => {
-  const res = await fetch(`${process.env.DB_HOST}/api/getMenu`);
-  const data = await res.json();
+  const data = getMenu();
 
   return {
     props: {
@@ -14,7 +15,8 @@ export const getStaticProps = async (context) => {
 };
 
 const Home = ({ menu }) => {
-  const firstItem = Object.keys(menu.data)[0];
+  const firstItem = Object.keys(menu)[0];
+
   return (
     <div className="bg-black h-screen">
       <Head>

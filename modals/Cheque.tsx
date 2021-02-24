@@ -33,7 +33,7 @@ const Cheque = (props) => {
             Ordered Items
           </h1>
           {currentCart.map((item) => (
-            <div className="w-auto flex justify-between text-lg p-5 border-4 border-gray-200 rounded-xl">
+            <div className="w-auto flex justify-between text-lg p-5 mt-2 border-4 border-gray-200 rounded-xl">
               <p>
                 x{item.count} - {item.name}
               </p>

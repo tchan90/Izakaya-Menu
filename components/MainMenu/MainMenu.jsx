@@ -6,12 +6,10 @@ import { vegeterianState } from '../../atoms/atoms';
 const MainMenu = ({ items }) => {
   const vegMode = useRecoilValue(vegeterianState);
 
-  // All Items
-  const { foodTypes } = items;
   // Only vegeterian options
-  const onlyVegItems = foodTypes.filter((f) => f.vegeterian);
+  const onlyVegItems = items.filter((f) => f.vegeterian);
 
-  const menuItems = vegMode ? onlyVegItems : foodTypes;
+  const menuItems = vegMode ? onlyVegItems : items;
   return (
     <div className="w-full h-full pt-3 pl-3 pb-3" style={{ height: '93vh' }}>
       <div className="h-full bg-white rounded-tl-md rounded-bl-md p-4 overflow-auto">
