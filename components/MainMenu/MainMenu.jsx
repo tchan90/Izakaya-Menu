@@ -12,7 +12,7 @@ const MainMenu = ({ items }) => {
   const menuItems = vegMode ? onlyVegItems : items;
   return (
     <div className="w-full h-full pt-3 pl-3 pb-3" style={{ height: '93vh' }}>
-      <div className="h-full bg-white rounded-tl-md rounded-bl-md p-4 overflow-auto">
+      <div className="h-full md:bg-white md:rounded-tl-md md:rounded-bl-md md:p-4 overflow-auto">
         <div className="grid md:gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {menuItems.map((m) => (
             <div className="flex justify-center align-center" key={m.id}>

@@ -10,6 +10,7 @@ import {
   faUser,
   faShoppingCart,
   faExclamationCircle,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import Cheque from '../../modals/Cheque';
 
@@ -17,6 +18,7 @@ import { vegeterianState, toggleVeggiemode } from '../../atoms/atoms';
 
 const Navigation = () => {
   const [getStaff, setGetStaff] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const handleToggleModal = () => {
     setOpenModal(!openModal);
@@ -35,11 +37,6 @@ const Navigation = () => {
     }, 3000);
   };
 
-  <div className="py-1 px-3 text-white border-2 border-white border-dashed">
-    <FontAwesomeIcon icon={faUser} color="white" size="1x" /> A staff member
-    will be with you shortly!
-  </div>;
-
   return (
     <>
       <nav className="bg-gray-800">
@@ -50,10 +47,22 @@ const Navigation = () => {
                 Izakaya Inn
               </span>
             </Link>
-            <div className="flex space-x-4 text-white">
+            <div
+              className="flex md:hidden"
+              onClick={() => setDropDown(!dropDown)}
+            >
+              <FontAwesomeIcon icon={faBars} color="white" size="2x" />
+            </div>
+            {dropDown && (
+              <div className="md:hidden absolute w-auto right-0 top-12 mt-4 p-7 bg-white z-10">
+                a drop down
+              </div>
+            )}
+
+            <div className="hidden md:flex space-x-4 text-white">
               {isOrderPage && (
                 <span
-                  className="cursor-pointer hover:text-gray-300 "
+                  className="cursor-pointer hover:text-gray-300"
                   onClick={() => router.back()}
                 >
                   <FontAwesomeIcon icon={faArrowLeft} color="white" size="1x" />{' '}
