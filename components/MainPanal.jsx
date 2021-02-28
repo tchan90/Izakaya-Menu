@@ -4,38 +4,31 @@ import Layout from './Layout';
 import SideMenu from './SideMenu/SideMenu';
 import MainMenu from './MainMenu/MainMenu';
 import styles from './MainPanal.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 const MainPanal = ({ items, categories }) => {
   const router = useRouter();
-  const currentCat = router.query.name;
-  const [dropDown, setDropDown] = useState(false);
+  const param = router.query.name;
+  const [value, setValue] = useState(param);
+
+  const onChange = (e) => {
+    setValue(e);
+    router.push(`/menu/${e}`);
+  };
   return (
     <Layout>
       <div className="block md:flex md:flex-row">
         {/* Category Menu on Mob */}
-        <div className="relative flex flex-col text-center pb-2 h-auto bg-white block md:hidden">
-          <h1 className="text-4xl text-indigo-900 mb-2 capitalize">
-            {' '}
-            {currentCat}
-          </h1>
-          <button
-            className="w-auto mx-5 px-2 py-1 rounded-2xl border-2 border-purple-500"
-            onClick={() => setDropDown(!dropDown)}
-          >
-            Pick Category{' '}
-            <FontAwesomeIcon
-              icon={faArrowAltCircleDown}
-              color="black"
-              size="md"
-            />
-          </button>
-          {dropDown && (
-            <div className="absolute inset-x-0 -bottom-10 bg-white p-3 z-10">
-              dropdown
-            </div>
-          )}
+        <div className="relative flex flex-col mx-2 py-2 h-auto bg-white block border-b-2 border-gray-200 md:hidden">
+          <h1 className="text-2xl text-gray-400 mb-2 capitalize"> Category </h1>
+          <select onChange={(e) => onChange(e.target.value, e)} value={value}>
+            {categories.map((c, k) => {
+              return (
+                <option key={k} value={c}>
+                  {c}
+                </option>
+              );
+            })}
+          </select>
         </div>
 
         <div className="flex flex-col hidden md:block">

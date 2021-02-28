@@ -17,8 +17,8 @@ const Order = () => {
       </Head>
       <div className="bg-gray-800 h-screen">
         <Layout />
-        <div className="bg-gray-200 h-screen mt-2 p-16 rounded-t-2xl overflow-y-scroll">
-          <h2 className="text-3xl text-left pb-3 border-b-2 border-gray-300">
+        <div className="bg-gray-200 h-screen mt-2 py-3 px-4 md:p-16 rounded-t-2xl overflow-y-scroll">
+          <h2 className="text-2xl md:text-3xl text-left text-gray-600 pb-3 border-b-2 border-gray-300">
             Picked Orders
           </h2>
           {cart.length === 0 && kitchen.length === 0 && (
@@ -31,7 +31,7 @@ const Order = () => {
             <PickedOrders cartItems={i} key={k} />
           ))}
           <div className="mt-40">
-            <h2 className="text-3xl text-left mb-4 pb-3 border-b-2 border-gray-300">
+            <h2 className="text-2xl md:text-3xl text-left text-gray-600 mb-4 pb-3 border-b-2 border-gray-300">
               Confirmed Orders
             </h2>
             <Kitchen />

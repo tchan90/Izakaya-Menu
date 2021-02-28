@@ -6,13 +6,13 @@ const Item = (props) => {
   const priceDisplay = price.toFixed(2);
   return (
     <ReactModal {...props}>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <img
           src={foodItem.image}
           alt={foodItem.name}
-          className="w-4/5 h-full md:w-2/4"
+          className="w-full h-full md:w-4/5 md:w-2/4"
         />
-        <div className="ml-5">
+        <div className="mt-3 md:mt-0 md:ml-5">
           <div className="flex">
             <p className="text-lg">{foodItem.name}</p>{' '}
             {foodItem.vegeterian && (
@@ -24,7 +24,7 @@ const Item = (props) => {
 
           <p className="text-gray-700">${priceDisplay}</p>
           <div className="border-t-2 mt-5 pt-3">
-            <p>{foodItem.description}</p>
+            <p className="text-sm md:text-base">{foodItem.description}</p>
           </div>
         </div>
       </div>

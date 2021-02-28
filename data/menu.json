@@ -1,5 +1,5 @@
 {
-  "ramen": [
+  "Ramen": [
     {
       "id": 1,
       "name": "Chicken Ramen",
@@ -33,7 +33,7 @@
       "vegeterian": true
     }
   ],
-  "sets": [
+  "Sets": [
     {
       "id": 5,
       "name": "Tonkatsu Set",
@@ -59,7 +59,7 @@
       "vegeterian": false
     }
   ],
-  "soba": [
+  "Soba": [
     {
       "id": 8,
       "name": "Plain Soba",
@@ -76,7 +76,7 @@
       "image": "https://images.unsplash.com/photo-1593357897684-3464383fe8f3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800"
     }
   ],
-  "sushi": [
+  "Sushi": [
     {
       "id": 10,
       "name": "Salmon Sushi",
@@ -126,7 +126,7 @@
       "vegeterian": true
     }
   ],
-  "dessert": [
+  "Dessert": [
     {
       "id": 16,
       "name": "Matcha Creme",
@@ -144,7 +144,7 @@
       "vegeterian": true
     }
   ],
-  "drinks": [
+  "Drinks": [
     {
       "id": 18,
       "name": "Matcha",

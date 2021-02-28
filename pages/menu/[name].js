@@ -36,7 +36,7 @@ const Menu = ({ items, categories }) => (
     <Head>
       <title>Izakaya Inn - Menu</title>
     </Head>
-    <div className="bg-gray-400 h-screen">
+    <div className="md:bg-gray-400 md:h-screen">
       <MainPanal items={items} categories={categories} />
     </div>
   </>

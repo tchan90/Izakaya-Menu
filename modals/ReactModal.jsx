@@ -35,7 +35,7 @@ const ReactModal = ({ showModal, toggleModal, children }) => {
             <FontAwesomeIcon icon={faTimesCircle} color="black" size="2x" />
           </button>
         </div>
-        <div className="w-full h-full p-3">{children}</div>
+        <div className="w-full h-full p-1 md:p-3">{children}</div>
       </div>
     </Modal>
   );

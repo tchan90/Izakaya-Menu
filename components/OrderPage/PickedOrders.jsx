@@ -63,16 +63,19 @@ const PickedOrders = ({ cartItems }) => {
 
   return (
     <div className="m-auto md:w-full lg:w-2/3">
-      <div className="flex mt-4">
+      <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-2 md:flex mt-4">
         <div className="flex items-center">
-          <button onClick={() => handleRemovefromCart(cartItems.id)}>
+          <button
+            onClick={() => handleRemovefromCart(cartItems.id)}
+            className="text-xs md:text-2xl"
+          >
             <FontAwesomeIcon icon={faTimes} color="black" size="2x" />
           </button>
         </div>
-        <div className="w-auto mx-10 flex items-center justify-center bg-white w-full text-center text-2xl rounded-md">
+        <div className="w-auto mx-auto md:mx-10 flex items-center justify-center bg-white w-full text-center rounded-md text-sm md:text-2xl">
           <p>{cartItems.name}</p>
         </div>
-        <div className="w-auto px-5 mr-10 flex justify-center bg-white text-center text-2xl rounded-md">
+        <div className="w-auto px-5 mr-10 flex justify-center bg-white text-center text-xs md:text-2xl rounded-md">
           <button
             disabled={cartItems.count < 1}
             onClick={() => {
@@ -97,7 +100,7 @@ const PickedOrders = ({ cartItems }) => {
 
         <div className="flex items-center justify-end">
           <button
-            className="auto-rows-min w-min h-auto px-5 py-2 rounded-md bg-gray-600 text-white"
+            className="auto-rows-min w-min h-auto px-5 py-2 rounded-md bg-gray-600 text-white text-xs md:text-base"
             onClick={() => confirmOrder()}
           >
             Confirm
