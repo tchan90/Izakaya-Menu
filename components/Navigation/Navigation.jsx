@@ -97,16 +97,6 @@ const Navigation = () => {
                         </p>
                       </li>
                     )}
-                    <li className="py-2" onClick={() => setDropDown(!dropDown)}>
-                      <p className="text-black active:text-purple-600">
-                        <FontAwesomeIcon
-                          icon={faUser}
-                          color="black"
-                          size="sm"
-                        />{' '}
-                        Get Staff
-                      </p>
-                    </li>
                     <li className={!isOrderPage ? 'py-2' : ''}>
                       <p className="text-black active:text-purple-600">
                         <FontAwesomeIcon

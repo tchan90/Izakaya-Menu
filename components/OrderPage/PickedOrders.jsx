@@ -63,8 +63,8 @@ const PickedOrders = ({ cartItems }) => {
 
   return (
     <div className="m-auto md:w-full lg:w-2/3">
-      <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-2 md:flex mt-4">
-        <div className="flex items-center">
+      <div className="grid grid-cols-6 gap-1 md:flex mt-4">
+        <div className="w-auto flex items-center">
           <button
             onClick={() => handleRemovefromCart(cartItems.id)}
             className="text-xs md:text-2xl"
@@ -72,10 +72,10 @@ const PickedOrders = ({ cartItems }) => {
             <FontAwesomeIcon icon={faTimes} color="black" size="2x" />
           </button>
         </div>
-        <div className="w-auto mx-auto md:mx-10 flex items-center justify-center bg-white w-full text-center rounded-md text-sm md:text-2xl">
+        <div className="col-span-5 w-auto mx-auto py-2 md:py-0 md:mx-10 flex items-center justify-center bg-white w-full text-center rounded-md text-sm md:text-2xl">
           <p>{cartItems.name}</p>
         </div>
-        <div className="w-auto px-5 mr-10 flex justify-center bg-white text-center text-xs md:text-2xl rounded-md">
+        <div className="col-start-2 col-span-5 w-auto md:px-5 md:mr-10 flex justify-center md:bg-white text-center text-xs md:text-2xl rounded-md">
           <button
             disabled={cartItems.count < 1}
             onClick={() => {
@@ -88,7 +88,9 @@ const PickedOrders = ({ cartItems }) => {
               size="2x"
             />
           </button>
-          <p className="m-3 px-4 py-2 border-2">{cartItems.count}</p>
+          <p className="w-auto m-1 md:m-3 px-4 py-2 border-2 bg-white">
+            {cartItems.count}
+          </p>
           <button
             onClick={() => {
               increment(cartItems.id);
@@ -98,9 +100,9 @@ const PickedOrders = ({ cartItems }) => {
           </button>
         </div>
 
-        <div className="flex items-center justify-end">
+        <div className="col-start-3 col-span-3 flex items-center justify-end">
           <button
-            className="auto-rows-min w-min h-auto px-5 py-2 rounded-md bg-gray-600 text-white text-xs md:text-base"
+            className="w-full md:w-min h-auto px-5 py-2 rounded-md bg-gray-600 text-white text-xs md:text-base"
             onClick={() => confirmOrder()}
           >
             Confirm
