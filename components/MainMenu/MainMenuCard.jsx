@@ -64,16 +64,16 @@ const MainMenuCard = ({ food }) => {
           alt={food.name}
           className="object-cover w-full h-3/4"
         />
-        <div className="flex flex-row h-auto justify-between mt-5 px-2">
+        <div className="flex justify-between items-center h-1/4 px-2 ">
           <div className="flex">
             <p className="capitalize">
               {food.name}
-              {!drinkCat && food.vegeterian && (
-                <span className="h-5 w-5 mt-1 p-1 flex items-center justify-center bg-green-500 text-white text-sm rounded-full">
+            </p>
+            {!drinkCat && food.vegeterian && (
+                <span className="h-5 w-5 mt-1 ml-1 p-1 flex items-center justify-center bg-green-500 text-white text-sm rounded-full">
                   V
                 </span>
               )}
-            </p>
           </div>
 
           <p className="text-gray-500">${priceDisplay}</p>
