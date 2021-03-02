@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Navigation from './Navigation/Navigation';
 
 const Layout = ({ children }) => {
@@ -8,4 +9,8 @@ const Layout = ({ children }) => {
     </div>
   );
 };
+
+Layout.propTypes = {
+  children: PropTypes.node
+}
 export default Layout;

@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil';
-
+import PropTypes from 'prop-types';
 import MainMenuCard from './MainMenuCard';
 import { vegeterianState } from '../../atoms/atoms';
 
@@ -27,4 +27,14 @@ const MainMenu = ({ items }) => {
     </div>
   );
 };
+
+MainMenu.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    vegeterian: PropTypes.bool
+  }))
+}
 export default MainMenu;

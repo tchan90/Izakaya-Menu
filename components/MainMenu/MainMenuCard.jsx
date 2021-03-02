@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { cartState } from '../../atoms/atoms';
@@ -83,4 +84,14 @@ const MainMenuCard = ({ food }) => {
     </>
   );
 };
+
+MainMenuCard.propTypes = {
+  food: PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    vegeterian: PropTypes.bool
+  })
+}
 export default MainMenuCard;

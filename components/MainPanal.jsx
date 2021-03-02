@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from './Layout';
@@ -42,4 +43,15 @@ const MainPanal = ({ items, categories }) => {
     </Layout>
   );
 };
+
+MainPanal.propTypes = {
+  categories: PropTypes.array,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    vegeterian: PropTypes.bool
+  }))
+}
 export default MainPanal;

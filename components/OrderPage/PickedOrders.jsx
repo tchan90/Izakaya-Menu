@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { cartState, kitchenState } from '../../atoms/atoms';
 
@@ -112,4 +113,13 @@ const PickedOrders = ({ cartItems }) => {
     </div>
   );
 };
+
+PickedOrders.propTypes = {
+  cartItems: PropTypes.shape({
+    count: PropTypes.number,
+    id: PropTypes.number,
+    name: PropTypes.string,
+    price: PropTypes.number
+  })
+}
 export default PickedOrders;
