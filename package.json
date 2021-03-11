@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9",
+    "classnames": "^2.2.6",
     "next": "10.0.4",
     "postcss": "^7",
     "react": "17.0.1",

@@ -5,6 +5,9 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { cartState } from '../../atoms/atoms';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import Pill from './components/Pill';
+import IconButton from './components/IconButton';
 import Item from '../../modals/Item';
 
 const MainMenuCard = ({ food }) => {
@@ -29,20 +32,11 @@ const MainMenuCard = ({ food }) => {
     <>
       <div className="w-80 h-80 bg-white m-4 border-2 border-gray-200 rounded-md shadow-md text-xl relative">
         <div className="w-full flex flex-row justify-between mb-1 absolute">
-          <button
-            className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center m-2 cursor-pointer"
-            onClick={handleToggleModal}
-            type="button"
-          >
-            <FontAwesomeIcon icon={faSearch} color="white" size="1x" />
-          </button>
+          <IconButton onClick={handleToggleModal} icon="search" />
           {isOrdered ? (
-            <div className="h-2/4 bg-green-500 rounded-full py-1 px-2 m-1 text-sm font-medium inline-block">
-              <p>Added!</p>
-            </div>
+            <Pill color="green" label="Added!" />
           ) : (
-            <button
-              className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center m-2 cursor-pointer"
+            <IconButton
               onClick={() =>
                 handleAddtoCart((items) => [
                   ...items,
@@ -54,10 +48,8 @@ const MainMenuCard = ({ food }) => {
                   },
                 ])
               }
-              role="button"
-            >
-              <FontAwesomeIcon icon={faPlus} color="white" size="1x" />
-            </button>
+              icon="plus"
+            />
           )}
         </div>
         <img
@@ -67,14 +59,12 @@ const MainMenuCard = ({ food }) => {
         />
         <div className="flex justify-between items-center h-1/4 px-2 ">
           <div className="flex">
-            <p className="capitalize">
-              {food.name}
-            </p>
+            <p className="capitalize">{food.name}</p>
             {!drinkCat && food.vegeterian && (
-                <span className="h-5 w-5 mt-1 ml-1 p-1 flex items-center justify-center bg-green-500 text-white text-sm rounded-full">
-                  V
-                </span>
-              )}
+              <span className="h-5 w-5 mt-1 ml-1 p-1 flex items-center justify-center bg-green-500 text-white text-sm rounded-full">
+                V
+              </span>
+            )}
           </div>
 
           <p className="text-gray-500">${priceDisplay}</p>
@@ -91,7 +81,7 @@ MainMenuCard.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string,
     price: PropTypes.number,
-    vegeterian: PropTypes.bool
-  })
-}
+    vegeterian: PropTypes.bool,
+  }),
+};
 export default MainMenuCard;
