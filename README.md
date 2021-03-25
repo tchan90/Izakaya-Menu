@@ -15,4 +15,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Local JSON Data
 - Tailwind CSS
 - Recoil
+- Storybook
+
+## View UI library in Chromatic
+https://www.chromatic.com/library?appId=605bbe50e9c8b3002135aa25&groupPrefix=Components
 
