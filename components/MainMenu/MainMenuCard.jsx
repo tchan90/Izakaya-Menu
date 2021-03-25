@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { cartState } from '../../atoms/atoms';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import Pill from './components/Pill';
 import IconButton from './components/IconButton';

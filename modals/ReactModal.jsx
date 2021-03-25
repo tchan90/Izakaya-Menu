@@ -27,7 +27,8 @@ const ReactModal = ({ showModal, toggleModal, children }) => {
       onRequestClose={handleCloseModal}
       style={customStyles}
       shouldCloseOnOverlayClick={true}
-      contentLabel="Minimal Modal Example"
+      contentLabel="modal content"
+      ariaHideApp={false}
     >
       <div className="flex flex-col">
         <div className="text-right">

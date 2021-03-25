@@ -3,7 +3,7 @@ import React from 'react';
 import IconButton from '../components/MainMenu/components/IconButton';
 
 export default {
-  title: 'Icon Button',
+  title: 'Components/Icon Button',
   component: IconButton,
   argTypes: {
     icon: {
@@ -12,6 +12,7 @@ export default {
         options: ['search', 'plus'],
       },
     },
+    onClick: { action: 'clicked' },
   },
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 import Pill from '../components/MainMenu/components/Pill';
 
 export default {
-  title: 'Pill',
+  title: 'Components/Pill',
   component: Pill,
   argTypes: {
     color: {
@@ -19,8 +19,8 @@ export default {
 const Template = (args) => <Pill {...args}>Added!</Pill>;
 
 // Each story reuses that template
-export const ConfirmedPill = Template.bind({});
-ConfirmedPill.args = {
+export const PillMessage = Template.bind({});
+PillMessage.args = {
   color: 'green',
   label: 'Added!',
 };

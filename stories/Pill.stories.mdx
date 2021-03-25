@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Pill from '../components/MainMenu/components/Pill';
+
+<Meta title="Components/Pill" component={Pill} />
+
+# Modal
+
+Here is some documentation about the pill.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+gravida volutpat ante, a consectetur nibh. Nullam tincidunt lectus
+at malesuada dapibus. Fusce dignissim lectus vitae pharetra semper.
+Proin vel commodo erat. Proin convallis lorem metus, in porta diam
+pellentesque at. Suspendisse sit amet tortor leo.
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = (args) => <Pill {...args} />;
+
+<Canvas>
+  <Story
+    name="PillMessage"
+    args={{
+      color: 'green',
+      label: 'Added!',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
