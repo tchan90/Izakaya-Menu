@@ -15,7 +15,7 @@ const Pill = ({ color, label }) => {
       className={classnames(
         colorOptions[color],
         colorBorder,
-        'h-2/4 rounded-full py-1 px-2 m-1 text-sm text-gray-700 font-medium inline-block border-2'
+        'h-2/4 rounded-full py-1 px-2 m-1 text-lg text-gray-700 font-medium inline-block border-2'
       )}
     >
       <p>{label}</p>
